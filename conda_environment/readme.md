@@ -25,10 +25,9 @@ docker run --rm -v "$PWD:/out" wxs-env:latest /out/WXS_env
 After export:
 
 ```bash
-source ./WXS_env/bin/activate
 ./WXS_env/bin/python --version
 ./WXS_env/bin/fastqc --version
-gistic2 --help
+./WXS_env/bin/gistic2
 ```
 
 ## Pull from GHCR
@@ -45,4 +44,4 @@ docker run --rm -v "$PWD:/out" ghcr.io/champeil/nextflow_pipeline/wxs-env:latest
 
 - `gistic2` is installed from the HCC conda artifacts because the original `hcc::gistic2` spec is sensitive to channel access during solve time.
 - The exported directory is relocatable because it is unpacked from `conda-pack` and fixed up with `conda-unpack`.
-- Activate the exported environment before running `gistic2` so the MATLAB runtime variables are set correctly.
+- The Docker build adds a small `gistic2` wrapper plus `ncurses` compatibility symlinks so the exported directory can run `gistic2` directly.
