@@ -1,0 +1,38 @@
+name: WXS_env
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.8
+  - fastqc=0.12.1
+  - multiqc=1.27
+  - trim-galore=0.6.10
+  - samtools=1.21
+  - bwa=0.7.18
+  - gatk4=4.6.1.0
+  - perl=5.32.1
+  - perl-compress-raw-zlib=2.202
+  - ensembl-vep=105.0
+  - vcf2maf=1.6.22
+  - cnvkit=0.9.12
+  - bioconductor-dnacopy=1.80.0
+  - r-cghflasso=0.2_1
+  - r-ggplot2=4.0.0
+  - R=4.4.0
+  - typeguard<4.0
+  - ucsc-gtftogenepred=469
+  - bioconda::ascat
+  - conda-pack
+  - pip
+  - pip:
+    - biopython
+    - reportlab
+    - matplotlib
+    - numpy
+    - scipy
+    - pandas
+    - pyfaidx
+    - pysam
