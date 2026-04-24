@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "conda_environment/**"
+      - "conda_environment/DNAseq/**"
+      - "conda_environment/readme.md"
       - ".github/workflows/build-wxs-env.yml"
   workflow_dispatch:
 
@@ -45,8 +46,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./conda_environment
-          file: ./conda_environment/Dockerfile
+          context: ./conda_environment/DNAseq
+          file: ./conda_environment/DNAseq/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
